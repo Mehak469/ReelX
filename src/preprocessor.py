@@ -25,7 +25,6 @@ def cast(obj):
             break
     return L
 
-import ast
 def fetch_director(obj):
     """
     This function takes a string representation of a list of dictionaries, converts it to a list of dictionaries, and then extracts the "name" value from the dictionary where the "job" key has the value "Director". It returns a list containing the director's name.
