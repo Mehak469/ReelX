@@ -1,4 +1,8 @@
 import ast
+from nltk.stem.porter import PorterStemmer
+
+stemmer = PorterStemmer()
+
 def convert(obj):
     """
     This function takes a string representation of a list of dictionaries, converts it to a list of dictionaries, and then extracts the "name" value from each dictionary to create a list of names. 
@@ -37,3 +41,12 @@ def fetch_director(obj):
             L.append(i["name"])
             break
     return L
+
+def stem(obj):
+    """
+    This function takes a string representation of a list of words, converts it to a list, and then applies stemming to each word using the Porter Stemmer algorithm. Again converts the list back to a string. It returns a tag of stemmed words.
+    """
+    L=[]
+    for i in obj.split():
+        L.append(stemmer.stem(i))
+    return " ".join(L)
